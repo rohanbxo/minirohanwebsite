@@ -138,10 +138,10 @@ body {
     padding: 3rem;
     max-width: 800px;
     margin: 0 auto;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 2px;
+    line-height: 1.6;
+    letter-spacing: 1px;
     text-align: justify;
 }
 
@@ -152,13 +152,15 @@ body {
 }
 
 .title p {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .title h1 {
-    font-size: 5rem;
-    line-height: 1;
+    font-size: 4.5rem;
+    line-height: 1.1;
     margin-top: 0;
     margin-bottom: 2rem;
     letter-spacing: 5px;
@@ -167,7 +169,7 @@ body {
 }
 
 p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .section-heading {
@@ -175,11 +177,11 @@ p {
     border-bottom: 2px solid #fce81f;
     padding-bottom: 5px;
     margin-bottom: 1.5rem;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 .section-text {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 3rem;
     line-height: 1.6;
 }
@@ -204,61 +206,74 @@ p {
 
 @media only screen and (max-width: 768px) {
     .wrapper3d { 
-        perspective: 80vw; 
+        perspective: 150vw; /* Less extreme perspective on mobile to prevent 3D overflow */
     }
     .fold {
-        width: 100vw;
-        height: 70vh;
+        width: 100%; /* Avoid 100vw to prevent horizontal scrollbars */
+        height: 75vh;
     }
     .foldTop {
-        transform: rotateX(-90deg); /* keep seamless at 90 */
+        transform: rotateX(-90deg);
     }
     .foldBottom {
-        transform: rotateX(90deg); /* keep seamless at 90 */
+        transform: rotateX(90deg);
     }
     .inner-content {
-        padding: 1rem 1.5rem;
-        font-size: 1.2rem;
-        max-width: 100%;
-        text-align: left;
+        padding: 5% 5%;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center; /* Centering helps prevent edge cutoffs */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
     }
     .title h1 { 
-        font-size: 2.8rem; 
-        margin-bottom: 1.5rem;
+        font-size: 2.2rem; 
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        word-break: break-word;
     }
     .title p { 
-        font-size: 1.2rem; 
+        font-size: 1.1rem; 
     }
     .section-heading {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
     }
     .section-text {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
     }
     .cv-button {
         padding: 10px 20px;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .social-links {
-        top: auto;
-        bottom: 2rem;
+        top: 2rem;
+        bottom: auto;
         left: 50%;
         transform: translateX(-50%);
         right: auto;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         padding: 10px 20px;
         border-radius: 30px;
         border: 1px solid #fce81f;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 9999;
     }
     .social-links a {
         width: 24px;
         height: 24px;
     }
     #toast {
-        bottom: 6rem; /* Move up to not overlap with social links that are moved to the bottom */
-        font-size: 1.2rem;
+        bottom: 6rem;
+        font-size: 1rem;
         padding: 0.8rem 1.5rem;
         width: 90%;
         text-align: center;
